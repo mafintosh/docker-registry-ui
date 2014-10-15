@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>docker registry</title>
+  <link rel="stylesheet" type="text/css" href="highlight.css">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    #tree-view {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 300px;
+      padding-left: 10px;
+      overflow-y: scroll;
+    }
+
+    .tree-view {
+      padding-top: 10px;
+    }
+
+    #code-content {
+      padding-top: 20px;
+      padding-left: 25px;
+      display: block;
+      color: #333;
+      height: 100%;
+    }
+
+    #code-view {
+      position: absolute;
+      margin: 0;
+      left: 310px;
+      right: 0;
+      top:0;
+      bottom: 0;
+      overflow-y: scroll;
+      font-family: 'Consolas, "Liberation Mono", Menlo, Courier, monospace';
+    }
+  </style>
+</head>
+<body>
+  <div id="tree-view"></div>
+  <pre id="code-view"><code id="code-content" class="hljs"></code></pre>
+  <script src="bundle.js"></script>
+</body>
+</html>
