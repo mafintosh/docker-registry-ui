@@ -11,6 +11,7 @@ var onerror = function(err) {
 
 var cd = function(p) {
   xhr({
+    timeout: 60*1000,
     method: 'GET',
     url: 'http://localhost:8000/v1/images/'+image+'/tree'+p,
     json: true
@@ -20,8 +21,9 @@ var cd = function(p) {
   })
 }
 
-var cat = function(p, image) {
+var cat = function(p) {
   xhr({
+    timeout: 60*1000,
     method: 'GET',
     url: 'http://localhost:8000/v1/images/'+image+'/blobs'+p
   }, function(err, response) {
@@ -38,8 +40,8 @@ browser.on('directory', function(p) {
   cd(p)
 })
 
-browser.on('file', function(p, entry) {
-  cat(p, entry.image)
+browser.on('file', function(p) {
+  cat(p)
 })
 
 browser.appendTo('#tree-view')
